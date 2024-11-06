@@ -7,9 +7,12 @@
 
 const RGB hexToRGB(const std::string_view hex) {
   std::string hexColor{ hex };
-  if(hexColor[0] == '#')
+  if(hexColor[0] == '#') {
+    assert(hexColor.length() == 7 && "Provided string not a valid color hex code.");
     hexColor = hexColor.substr(1, 6);
-  assert(hexColor.length() == 6 && "Provided string not a valid color hex code.");
+  }
+  else
+    assert(hexColor.length() == 6 && "Provided string not a valid color hex code.");
 
   return RGB{
     static_cast<std::uint8_t>(std::stoi(hexColor.substr(0, 2), nullptr, 16)),
