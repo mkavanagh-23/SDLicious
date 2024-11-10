@@ -6,6 +6,11 @@
 #include "colors.h"
 
 namespace Colors{
+  std::ostream& operator<<(std::ostream& out, const RGB& color) {
+    out << "RGB(" << static_cast<int>(color.r) << ", " << static_cast<int>(color.g) << ", " << static_cast<int>(color.b) << ')';
+    return out;
+  }
+
   const RGB hexToRGB(const std::string_view hex) {
     std::string hexColor{ hex };
     if(hexColor[0] == '#') {
@@ -27,4 +32,4 @@ namespace Colors{
     std::sprintf(hex, "#%02x%02x%02x", static_cast<int>(color.r), static_cast<int>(color.g), static_cast<int>(color.b));
     return std::string(hex);
   }
-}
+};

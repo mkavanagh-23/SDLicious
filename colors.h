@@ -16,20 +16,17 @@ namespace Colors{
       const std::uint8_t b{ 255 };
 
     public:
-      RGB(std::uint8_t red, std::uint8_t green, std::uint8_t blue)
+      RGB(std::uint8_t red, std::uint8_t green, std::uint8_t blue) 
         : r{ red }, g{ green }, b{ blue }
       {}
 
     public:
-      friend std::ostream& operator<<(std::ostream& out, const RGB& color) {
-        out << "RGB(" << static_cast<int>(color.r) << ", " << static_cast<int>(color.g) << ", " << static_cast<int>(color.b) << ')';
-        return out;
-      }
-    };
+      friend std::ostream& operator<<(std::ostream& out, const RGB& color);
+  };
 
-const RGB hexToRGB(const std::string_view hex);
-const std::string RGBtoHex(const RGB& color);
+  const RGB hexToRGB(const std::string_view hex);
+  const std::string RGBtoHex(const RGB& color);
 
-} //END NAMESPACE
+}; //END NAMESPACE
 
 #endif
