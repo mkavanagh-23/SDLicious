@@ -26,6 +26,7 @@ namespace Colors{
 
   const RGB hexToRGB(const std::string_view hex);
   const std::string RGBtoHex(const RGB& color);
+  const std::uint8_t percentTo8bit(const int percent);
 
 }; //END NAMESPACE
 

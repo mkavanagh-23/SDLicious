@@ -32,4 +32,8 @@ namespace Colors{
     std::sprintf(hex, "#%02x%02x%02x", static_cast<int>(color.r), static_cast<int>(color.g), static_cast<int>(color.b));
     return std::string(hex);
   }
+  
+  const std::uint8_t percentTo8bit(const int percent) {
+    return static_cast<std::uint8_t>((percent * 255) / 100);  //Scale transparency percentage into 8-bit int
+  }
 };
