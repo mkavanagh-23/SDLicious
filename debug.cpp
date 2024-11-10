@@ -1,5 +1,6 @@
 #include <iostream>
 #include "SDL.h"
+#include "colors.h"
 
 namespace Debug{
   //Render a solid color to the game window
@@ -9,10 +10,17 @@ namespace Debug{
     std::cout << "Enter a hex value: ";
     std::cin >> hexValue;
 
-    std::cout << "Hex Value: " << hexValue << '\n';
-    std::cout << Colors::hexToRGB(hexValue) << std::endl;
+    int transparency{};
+    do{
+      std::cout << "Enter a transparency percentage: ";
+      std::cin >> transparency;
+    }while(transparency < 0 || transparency > 100);
 
-    session.drawColor(hexValue, 255);
+    std::cout << "Hex Value: " << hexValue << '\n';
+    std::cout << Colors::hexToRGB(hexValue) << '\n';
+    std::cout << "Transparency: " << transparency << "% / alpha: " << static_cast<int>(Colors::percentTo8bit(transparency)) << std::endl;
+
+    session.drawColor(hexValue, transparency);
     session.displayRender();
   }
 
