@@ -2,7 +2,6 @@
 #define SDL_H
 
 #include <SDL2/SDL.h>
-#include <tuple>
 #include <string_view>
 #include "colors.h"
 
@@ -18,7 +17,7 @@ namespace SDL{
       Session();
       ~Session();
     public:
-      void drawColor(std::string_view hexColor, const std::uint8_t transparency) const; 
+      void drawColor(std::string_view hexColor, const int alphaPercent) const; 
       void copyToRender() const;
       void displayRender() const;
   };
