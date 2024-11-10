@@ -18,9 +18,9 @@ namespace SDL{
       Session();
       ~Session();
     public:
-      void drawColor(std::string_view hexColor, const std::uint8_t transparency); 
-      void copyToRender();
-      void displayRender();
+      void drawColor(std::string_view hexColor, const std::uint8_t transparency) const; 
+      void copyToRender() const;
+      void displayRender() const;
   };
   
 };

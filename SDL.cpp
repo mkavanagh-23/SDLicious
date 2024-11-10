@@ -23,16 +23,16 @@ namespace SDL {
     SDL_Quit();  
   }
 
-  void Session::drawColor(std::string_view hexColor, const std::uint8_t transparency) {
+  void Session::drawColor(std::string_view hexColor, const std::uint8_t transparency) const {
     Colors::RGB color = Colors::hexToRGB(hexColor);
     SDL_SetRenderDrawColor(m_renderer, color.r, color.g, color.b, transparency);
     SDL_RenderClear(m_renderer);
   }
 
-  void Session::copyToRender(){
+  void Session::copyToRender() const{
   }
 
-  void Session::displayRender(){
+  void Session::displayRender() const{
     SDL_RenderPresent(m_renderer);
     SDL_Delay(1000);
   }
