@@ -9,7 +9,7 @@
 
 //Function Prototypes
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
 
   SDL::Session gameSession{};
 

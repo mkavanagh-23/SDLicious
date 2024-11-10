@@ -1,6 +1,5 @@
 #include <SDL2/SDL.h>
 #include <cassert>
-#include <cstdint>
 #include <string_view>
 #include "SDL.h"
 #include "colors.h"
@@ -23,8 +22,7 @@ namespace SDL {
 
   void Session::drawColor(std::string_view hexColor, const int alphaPercent) const {
     auto color = Colors::hexToRGB(hexColor);
-    auto transparency = static_cast<std::uint8_t>((alphaPercent * 255) / 100);  //Scale transparency percentage into 8-bit int
-    SDL_SetRenderDrawColor(m_renderer, color.r, color.g, color.b, transparency);
+    SDL_SetRenderDrawColor(m_renderer, color.r, color.g, color.b, Colors::percentTo8bit(alphaPercent));
     SDL_RenderClear(m_renderer);
   }
 

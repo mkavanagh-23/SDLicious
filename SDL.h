@@ -10,9 +10,9 @@
 namespace SDL{
   class Session{
     private:
-      SDL_Window* m_window{ NULL };
-      SDL_Renderer* m_renderer;
-      SDL_Surface* m_surface{ NULL };
+      SDL_Window *m_window{ NULL };
+      SDL_Renderer *m_renderer;
+      SDL_Surface *m_surface{ NULL };
     public:
       Session();
       ~Session();
