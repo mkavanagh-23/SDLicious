@@ -2,7 +2,9 @@
 #include "SDL.h"
 
 namespace Debug{
+  //Render a solid color to the game window
   void ColorRender(const SDL::Session& session) {
+    std::cout << "Debugging Color Rendering: \n";
     std::string hexValue{};
     std::cout << "Enter a hex value: ";
     std::cin >> hexValue;
