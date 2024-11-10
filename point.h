@@ -10,7 +10,7 @@ struct Point2d {
 
     Point2d(int xPos, int yPos)
       : x{ xPos }, y{ yPos }
-      {}
+    {}
 
     friend std::ostream& operator<<(std::ostream& out, const Point2d& point) {
       out << "Point2d(" << point.x << ',' << point.y << ')';
